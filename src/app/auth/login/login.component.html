@@ -1,0 +1,50 @@
+<div
+  class="container-home d-flex flex-column align-items-center justify-content-center"
+>
+  <div class="marquee-container">
+    <div class="marquee">
+      <span
+        >🚀<span class="text">
+          Hệ thống quản lý Invex đã cập nhật tính năng mới! Kiểm tra ngay trong
+          trang Dashboard!</span
+        >
+        🚀</span
+      >
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="title d-flex justify-content-center align-items-center">
+      <img
+        src="assets/images/logo_haft.png"
+        alt=""
+        style="width: 50px; height: 50px"
+      />
+      Invex
+    </div>
+    <form [formGroup]="loginForm" (submit)="login()">
+      <div class="field">
+        <input type="text" required formControlName="username" #username />
+        <label>Username</label>
+      </div>
+      <div class="field">
+        <input type="password" required formControlName="password" />
+        <label>Password</label>
+      </div>
+      <div class="content">
+        <div class="checkbox">
+          <input type="checkbox" id="remember-me" />
+          <label for="remember-me">Remember me</label>
+        </div>
+        <div class="pass-link">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+      <div class="field d-flex justify-content-center">
+        <button class="snip1547" type="submit"><span>Login</span></button>
+      </div>
+      <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+    </form>
+  </div>
+</div>
+<!-- <ngx-spinner type="ball-scale-multiple" color="#fff"></ngx-spinner> -->
