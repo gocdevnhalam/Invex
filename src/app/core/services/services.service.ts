@@ -13,6 +13,11 @@ export class ServicesService {
     return this._http.post(this.loginUrl, {
       username: data.username,
       password: data.password,
+      token: data.token,
     });
+  }
+  getUserData(token: any) {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._http.get<any>(this.loginUrl, { headers });
   }
 }

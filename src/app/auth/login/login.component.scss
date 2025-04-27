@@ -7,204 +7,224 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  .wrapper {
+    width: 380px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  }
+  .wrapper .title {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 63px;
+    color: #fff;
+    user-select: none;
+    border-radius: 15px 15px 0 0;
+    background: $linear-primary;
+  }
+  .wrapper form {
+    padding: 10px 30px 20px 30px;
+  }
+  .wrapper form .field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+  }
+  .wrapper form .field input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    padding-left: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  .wrapper form .field input:focus,
+  form .field input:valid {
+    border-color: #4158d0;
+  }
+  .wrapper form .field label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    color: #999999;
+    font-weight: 400;
+    font-size: 17px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+  form .field input:focus ~ label,
+  form .field input:valid ~ label {
+    top: 0%;
+    font-size: 16px;
+    color: #4158d0;
+    background: #fff;
+    transform: translateY(-50%);
+  }
+  form .content {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-around;
+  }
+  form .content .checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  form .content input {
+    width: 15px;
+    height: 15px;
+    background: red;
+  }
+  form .content label {
+    color: #262626;
+    user-select: none;
+    padding-left: 5px;
+  }
+  form .content .pass-link {
+    color: "";
+  }
+  form .field input[type="submit"] {
+    color: #fff;
+    border: none;
+    padding-left: 0;
+    margin-top: -10px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    background: $linear-primary;
+    transition: all 0.3s ease;
+  }
+  form .field input[type="submit"]:active {
+    transform: scale(0.95);
+  }
+  form .signup-link {
+    color: #262626;
+    margin-top: 50px;
+    text-align: center;
+  }
+  form .pass-link a,
+  form .signup-link a {
+    color: #4158d0;
+    text-decoration: none;
+  }
+  form .pass-link a:hover,
+  form .signup-link a:hover {
+    text-decoration: underline;
+  }
+
+  .snip1547 {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 17.5px;
+    font-weight: 500;
+    line-height: 48px;
+    margin: 15px 30px;
+    outline: none;
+    padding: 0 43px 0 0;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  .snip1547 span {
+    background: $linear-primary;
+    border-radius: 5px 0 0 5px;
+    padding: 10px 20px;
+    -webkit-transition: all 0.15s ease-in;
+    transition: all 0.15s ease-in;
+  }
+
+  .snip1547:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: ">";
+    background: $linear-primary;
+    position: absolute;
+    right: 0%;
+    height: 48px;
+    padding: 1px 20px;
+    top: 0;
+    border-radius: 0 5px 5px 0;
+    -webkit-transition: all 0.15s ease-in;
+    transition: all 0.15s ease-in;
+  }
+
+  .snip1547:hover span,
+  .snip1547.hover span {
+    background: $linear-primary;
+  }
+
+  .snip1547:hover:after,
+  .snip1547.hover:after {
+    margin-top: -5px;
+    background: $linear-primary;
+    box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+  .marquee-container {
+    width: 70%;
+    overflow: hidden;
+    background: transparent;
+    padding: 10px 0;
+    position: absolute;
+    top: 20px;
+  }
+
+  .marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 12s linear infinite;
+    font-weight: bold;
+    // font-size: 32px;
+  }
+  .text {
+    background: $linear-primary;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 ::selection {
-  background: #4158d0;
+  background: $color-primary;
   color: #fff;
 }
-.wrapper {
-  width: 380px;
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+.invalid {
+  border: 1px solid red !important;
 }
-.wrapper .title {
-  font-size: 35px;
-  font-weight: 600;
-  text-align: center;
-  line-height: 63px;
-  color: #fff;
-  user-select: none;
-  border-radius: 15px 15px 0 0;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+.card {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
-.wrapper form {
-  padding: 10px 30px 50px 30px;
-}
-.wrapper form .field {
-  height: 50px;
-  width: 100%;
-  margin-top: 20px;
-  position: relative;
-}
-.wrapper form .field input {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  font-size: 17px;
-  padding-left: 20px;
-  border: 1px solid lightgrey;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-}
-.wrapper form .field input:focus,
-form .field input:valid {
-  border-color: #4158d0;
-}
-.wrapper form .field label {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  color: #999999;
-  font-weight: 400;
-  font-size: 17px;
-  pointer-events: none;
-  transform: translateY(-50%);
-  transition: all 0.3s ease;
-}
-form .field input:focus ~ label,
-form .field input:valid ~ label {
-  top: 0%;
-  font-size: 16px;
-  color: #4158d0;
-  background: #fff;
-  transform: translateY(-50%);
-}
-form .content {
+::ng-deep .p-toast-message-content {
   display: flex;
-  width: 100%;
-  height: 50px;
-  font-size: 16px;
-  align-items: center;
-  justify-content: space-around;
-}
-form .content .checkbox {
-  display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
 }
-form .content input {
-  width: 15px;
-  height: 15px;
-  background: red;
-}
-form .content label {
-  color: #262626;
-  user-select: none;
-  padding-left: 5px;
-}
-form .content .pass-link {
-  color: "";
-}
-form .field input[type="submit"] {
-  color: #fff;
-  border: none;
-  padding-left: 0;
-  margin-top: -10px;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  transition: all 0.3s ease;
-}
-form .field input[type="submit"]:active {
-  transform: scale(0.95);
-}
-form .signup-link {
-  color: #262626;
-  margin-top: 20px;
-  text-align: center;
-}
-form .pass-link a,
-form .signup-link a {
-  color: #4158d0;
-  text-decoration: none;
-}
-form .pass-link a:hover,
-form .signup-link a:hover {
-  text-decoration: underline;
-}
-
-.snip1547 {
-  background-color: transparent;
-  border: none;
-  color: #ffffff;
-  cursor: pointer;
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 17.5px;
-  font-weight: 500;
-  line-height: 48px;
-  margin: 15px 30px;
-  outline: none;
-  padding: 0 43px 0 0;
-  position: relative;
-  text-transform: uppercase;
-}
-
-.snip1547 span {
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  border-radius: 5px 0 0 5px;
-  padding: 10px 20px;
-  -webkit-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in;
-}
-
-.snip1547:after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: ">";
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  position: absolute;
-  right: 0%;
-  height: 48px;
-  padding: 1px 20px;
-  top: 0;
-  border-radius: 0 5px 5px 0;
-  -webkit-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in;
-}
-
-.snip1547:hover span,
-.snip1547.hover span {
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-}
-
-.snip1547:hover:after,
-.snip1547.hover:after {
-  margin-top: -5px;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5);
-}
-.marquee-container {
-  width: 70%;
-  overflow: hidden;
-  background: transparent;
-  padding: 10px 0;
-  position: absolute;
-  top: 20px;
-}
-
-.marquee {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 12s linear infinite;
-  font-weight: bold;
-  // font-size: 32px;
-}
-.text {
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+::ng-deep .p-toast-message-icon {
+  display: flex;
+  align-items: center;
 }

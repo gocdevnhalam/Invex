@@ -22,18 +22,38 @@
       />
       Invex
     </div>
-    <form [formGroup]="loginForm" (submit)="login()">
+    <form [formGroup]="loginForm" (submit)="login()" autocomplete="off">
       <div class="field">
-        <input type="text" required formControlName="username" #username />
+        <input
+          type="text"
+          required
+          formControlName="username"
+          #username
+          autocomplete="off"
+          id="username"
+          (input)="inputValue(username)"
+        />
         <label>Username</label>
       </div>
       <div class="field">
-        <input type="password" required formControlName="password" />
+        <input
+          (input)="inputValue(password)"
+          type="password"
+          required
+          id="password"
+          #password
+          formControlName="password"
+          autocomplete="new-password"
+        />
         <label>Password</label>
       </div>
       <div class="content">
         <div class="checkbox">
-          <input type="checkbox" id="remember-me" />
+          <input
+            type="checkbox"
+            id="remember-me"
+            formControlName="checkRemember"
+          />
           <label for="remember-me">Remember me</label>
         </div>
         <div class="pass-link">
@@ -48,3 +68,4 @@
   </div>
 </div>
 <ngx-spinner type="ball-scale-multiple" color="#fff"></ngx-spinner>
+<p-toast />
