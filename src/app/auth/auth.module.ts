@@ -7,6 +7,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { FormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
@@ -16,6 +17,7 @@ import { MessageService } from 'primeng/api';
     NgxSpinnerModule,
     FormsModule,
     ToastModule,
+    DialogModule,
   ],
   providers: [MessageService],
 })

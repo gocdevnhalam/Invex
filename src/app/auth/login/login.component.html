@@ -69,3 +69,16 @@
 </div>
 <ngx-spinner type="ball-scale-multiple" color="#fff"></ngx-spinner>
 <p-toast />
+<p-dialog
+  [modal]="true"
+  [(visible)]="visible"
+  [dismissableMask]="true"
+  [closable]="true"
+  [style]="{
+    'min-width': '424px',
+    'min-height': '122px',
+    'text-align': 'center',
+  }"
+>
+  <h4>Tài khoản hoặc mật khẩu không chính xác</h4>
+</p-dialog>
