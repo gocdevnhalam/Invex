@@ -25,7 +25,9 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ButtonModule } from 'primeng/button';
 import { ButtonGroupModule } from 'primeng/buttongroup';
-
+import { SidebarModule } from 'primeng/sidebar';
+import { ChartModule } from 'primeng/chart';
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +54,9 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
     SplitButtonModule,
     ButtonModule,
     ButtonGroupModule,
+    SidebarModule,
+    ChartModule,
+    TableModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

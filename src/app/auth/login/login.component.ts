@@ -35,13 +35,11 @@ export class LoginComponent {
     const accessToken = localStorage.getItem('access_token');
     if (accessToken) {
       const a = this.authService.isTokenExpired(accessToken);
-      console.log(a);
     }
 
     if (accessToken && !this.authService.isTokenExpired(accessToken)) {
       this.services.getUserData(accessToken).subscribe(
         (data: any) => {
-          console.log('getUserData success:', data);
           if (data.status == ConstantDef.STATUS_SUCCES) {
             const username = data.response.username;
             this.loginForm.patchValue({

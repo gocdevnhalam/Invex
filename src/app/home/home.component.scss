@@ -1,4 +1,8 @@
-.header {
-  height: 60px;
-  margin-top: 10px;
+::ng-deep {
+  .p-sidebar-left {
+    top: unset !important;
+    width: 10rem !important;
+    overflow-x: hidden;
+    transition: transform 05s ease-in-out !important;
+  }
 }
