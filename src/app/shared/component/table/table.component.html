@@ -3,7 +3,7 @@
     <tr>
       <th>Tên</th>
       <th>Ảnh</th>
-      <th>Price</th>
+      <th>Giá bán</th>
       <th>Số lượng bán</th>
       <th>Số lượng còn lại</th>
     </tr>
@@ -13,14 +13,14 @@
       <td>{{ product.name }}</td>
       <td>
         <img
-          src="assets/images/logo_haft.png"
+          [src]="product.image"
           [alt]="product.name"
-          width="20"
+          width="40"
           class="shadow-4"
         />
       </td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.category }}</td>
+      <td>{{ product.price | currency : "VND" }}</td>
+      <td>{{ product.total_sold }} {{ product.unit }}</td>
     </tr>
   </ng-template>
 </p-table>
