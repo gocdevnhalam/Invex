@@ -1,1 +1,26 @@
-<p>table works!</p>
+<p-table [value]="products" [scrollable]="true" scrollHeight="520px" [rows]="3">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Tên</th>
+      <th>Ảnh</th>
+      <th>Price</th>
+      <th>Số lượng bán</th>
+      <th>Số lượng còn lại</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-product>
+    <tr>
+      <td>{{ product.name }}</td>
+      <td>
+        <img
+          src="assets/images/logo_haft.png"
+          [alt]="product.name"
+          width="20"
+          class="shadow-4"
+        />
+      </td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.category }}</td>
+    </tr>
+  </ng-template>
+</p-table>

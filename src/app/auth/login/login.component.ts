@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ConstantDef } from '~/app/core/constantDef';
-import { ServicesService } from '~/app/core/services/services.service';
+import { Service } from '~/app/core/services/services.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../auth.service';
@@ -18,7 +18,7 @@ export class LoginComponent {
   visible: boolean = false;
   constructor(
     private spinner: NgxSpinnerService,
-    private services: ServicesService,
+    private services: Service,
     private formBuilder: FormBuilder,
     private router: Router,
     private messageService: MessageService,

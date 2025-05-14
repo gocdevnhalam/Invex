@@ -28,6 +28,7 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
 import { SidebarModule } from 'primeng/sidebar';
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
+import { SharedModuleApp } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { TableModule } from 'primeng/table';
   ],
   imports: [
     BrowserModule,
+    SharedModuleApp,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
