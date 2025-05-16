@@ -1,0 +1,25 @@
+<div
+  class="pt-1 pl-3 pr-3 pb-3 shadow-2 border-round-lg flex justify-content-between"
+>
+  <div>
+    <p>{{ data.title }}</p>
+    <p>{{ data.quantity || "Chưa có dữ liệu" }}</p>
+    <p>
+      <span class="text-green-500"> + {{ data.percentGrowth | percent }} </span>
+      <span> {{ data.type }}</span>
+    </p>
+  </div>
+  <div class="flex align-items-center flex-column pt-3">
+    <p-calendar
+      [(ngModel)]="date"
+      [style]="{ width: '110px', height: '10px' }"
+      class="mb-4"
+    />
+    <i
+      [class]="data.class"
+      style="font-size: 20px"
+      [style.color]="data.color"
+    ></i>
+    <a href="" class="mt-2 text-green-500" style="font-size: small">Chi tiết</a>
+  </div>
+</div>

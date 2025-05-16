@@ -25,52 +25,16 @@
   >
     <div class="grid p-2 mr-0">
       <div class="col">
-        <div class="pt-1 pl-3 pr-3 pb-3 shadow-2 border-round-lg">
-          <p>Lượng hàng nhập vào</p>
-          <p>{{ price | currency : "VND" }}</p>
-          <p>
-            <span class="text-green-500">
-              + {{ percentGrowth | percent }}
-            </span>
-            <span> ngày hôm qua </span>
-          </p>
-        </div>
+        <app-paper [data]="dataPaper[0]"></app-paper>
       </div>
       <div class="col">
-        <div class="pt-1 pl-3 pr-3 pb-3 shadow-2 border-round-lg">
-          <p>Lượng hàng bán ra</p>
-          <p>{{ price | currency : "VND" }}</p>
-          <p>
-            <span class="text-green-500">
-              + {{ percentGrowth | percent }}
-            </span>
-            <span> ngày hôm qua </span>
-          </p>
-        </div>
+        <app-paper [data]="dataPaper[1]"></app-paper>
       </div>
       <div class="col">
-        <div class="pt-1 pl-3 pr-3 pb-3 shadow-2 border-round-lg">
-          <p>Số lượng tồn kho</p>
-          <p>{{ price | currency : "VND" }}</p>
-          <p>
-            <span class="text-green-500">
-              + {{ percentGrowth | percent }}
-            </span>
-            <span> ngày hôm qua </span>
-          </p>
-        </div>
+        <app-paper [data]="dataPaper[2]"></app-paper>
       </div>
       <div class="col">
-        <div class="pt-1 pl-3 pr-3 pb-3 shadow-2 border-round-lg">
-          <p>Tồn kho cần xử lý</p>
-          <p>{{ price | currency : "VND" }}</p>
-          <p>
-            <span class="text-green-500">
-              + {{ percentGrowth | percent }}
-            </span>
-            <span> ngày hôm qua </span>
-          </p>
-        </div>
+        <app-paper [data]="dataPaper[3]"></app-paper>
       </div>
     </div>
     <div class="grid p-2 mr-0">

@@ -29,19 +29,26 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
 import { SharedModuleApp } from './shared/shared.module';
+import { PaperComponent } from './home/paper/paper.component';
+import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TopBarComponent,
     SideBarComponent,
+    PaperComponent,
   ],
   imports: [
+    NgxSpinnerModule,
     BrowserModule,
     SharedModuleApp,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     StyleClassModule,
     MenubarModule,
@@ -59,6 +66,7 @@ import { SharedModuleApp } from './shared/shared.module';
     SidebarModule,
     ChartModule,
     TableModule,
+    CalendarModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

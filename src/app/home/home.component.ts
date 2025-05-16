@@ -10,7 +10,41 @@ export class HomeComponent {
   price: number = 5000000;
   percentGrowth: number = 0.52;
   data: any;
-
+  dataPaper: any[] = [
+    {
+      title: 'Doanh thu',
+      quantity: 500,
+      unit: 'sản phẩm',
+      percentGrowth: 0.5,
+      type: 'ngày hôm qua',
+      class: 'pi pi-dollar revenue',
+    },
+    {
+      title: 'Lượng hàng bán',
+      quantity: 500,
+      unit: 'sản phẩm',
+      percentGrowth: 0.5,
+      type: 'ngày hôm qua',
+      class: 'pi pi-check-circle',
+    },
+    {
+      title: 'Lượng tồn kho',
+      quantity: 500,
+      unit: 'sản phẩm',
+      percentGrowth: 0.5,
+      type: 'ngày hôm qua',
+      class: 'pi pi-cart-minus',
+    },
+    {
+      title: 'Tồn kho cần xử lý',
+      quantity: 500,
+      unit: 'sản phẩm',
+      percentGrowth: 0.5,
+      type: 'ngày hôm qua',
+      class: 'pi pi-ban',
+      color: 'red',
+    },
+  ];
   options: any;
   handleData(data: any) {
     this.isShowSideBar = data;

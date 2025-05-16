@@ -14,7 +14,7 @@
   }
 }
 
-::ng-deep {
+:host ::ng-deep {
   .p-element:hover {
     background-color: black;
   }

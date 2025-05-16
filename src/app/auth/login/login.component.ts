@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ConstantDef } from '~/app/core/constantDef';
 import { Service } from '~/app/core/services/services.service';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../auth.service';
+import { LoadingService } from '~/app/core/services/loading.service';
 declare var $: any;
 @Component({
   selector: 'app-login',
@@ -17,12 +17,12 @@ export class LoginComponent {
   isChangePos: boolean = false;
   visible: boolean = false;
   constructor(
-    private spinner: NgxSpinnerService,
     private services: Service,
     private formBuilder: FormBuilder,
     private router: Router,
     private messageService: MessageService,
-    private authService: AuthService
+    private authService: AuthService,
+    private loading: LoadingService
   ) {
     this.loginForm = formBuilder.group({
       username: ['', Validators.required],
@@ -66,7 +66,7 @@ export class LoginComponent {
         password: this.loginForm.value?.password.trim(),
       };
 
-      this.spinner.show();
+      this.loading.show();
       this.services.login(data).subscribe(
         (data: any) => {
           if (data.status == ConstantDef.STATUS_SUCCES) {
@@ -78,15 +78,15 @@ export class LoginComponent {
               localStorage.removeItem('token');
             }
             this.router.navigate(['/home']);
-            this.spinner.hide();
+            this.loading.hide();
           } else {
-            this.spinner.hide();
+            this.loading.hide();
             this.visible = true;
           }
         },
         (error: any) => {
           console.log(error);
-          this.spinner.hide();
+          this.loading.hide();
         }
       );
     } else {
