@@ -3,18 +3,28 @@
 >
   <div>
     <p>{{ data.title }}</p>
-    <p>{{ data.quantity || "Chưa có dữ liệu" }}</p>
-    <p>
-      <span class="text-green-500"> + {{ data.percentGrowth | percent }} </span>
-      <span> {{ data.type }}</span>
-    </p>
+    <p>{{ quantity || "Chưa có dữ liệu" | currency : "VND" }}</p>
+
+    <i
+      [class]="
+        revenueBefore > 0 ? 'pi pi-arrow-circle-up' : 'pi pi-arrow-circle-down'
+      "
+      [style.color]="revenueBefore > 0 ? 'blue' : 'red'"
+    ></i>
+    <span class="text-green-500"> {{ revenueBefore | percent }} </span>
+    <span> {{ selectedTime == "0" ? "Ngày hôm qua" : "Tháng trước" }}</span>
   </div>
   <div class="flex align-items-center flex-column pt-3">
-    <p-calendar
-      [(ngModel)]="date"
-      [style]="{ width: '110px', height: '10px' }"
-      class="mb-4"
-    />
+    <select
+      name=""
+      id=""
+      style="height: 30px; margin-bottom: 20px; outline: none"
+      [(ngModel)]="selectedTime"
+      (change)="changeType()"
+    >
+      <option value="0">Ngày</option>
+      <option value="1">Tháng</option>
+    </select>
     <i
       [class]="data.class"
       style="font-size: 20px"

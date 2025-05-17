@@ -17,8 +17,6 @@ export class AppComponent {
   ) {}
   ngOnInit(): void {
     this.loadingSub = this.loadingService.isLoading.subscribe((loading) => {
-      console.log(loading);
-
       if (loading) {
         this.spinner.show();
       } else {

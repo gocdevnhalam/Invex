@@ -16,7 +16,7 @@ export class HomeComponent {
       quantity: 500,
       unit: 'sản phẩm',
       percentGrowth: 0.5,
-      type: 'ngày hôm qua',
+      type: '0',
       class: 'pi pi-dollar revenue',
     },
     {
@@ -24,7 +24,7 @@ export class HomeComponent {
       quantity: 500,
       unit: 'sản phẩm',
       percentGrowth: 0.5,
-      type: 'ngày hôm qua',
+      type: '1',
       class: 'pi pi-check-circle',
     },
     {
@@ -32,7 +32,7 @@ export class HomeComponent {
       quantity: 500,
       unit: 'sản phẩm',
       percentGrowth: 0.5,
-      type: 'ngày hôm qua',
+      type: '2',
       class: 'pi pi-cart-minus',
     },
     {
@@ -40,7 +40,7 @@ export class HomeComponent {
       quantity: 500,
       unit: 'sản phẩm',
       percentGrowth: 0.5,
-      type: 'ngày hôm qua',
+      type: '3',
       class: 'pi pi-ban',
       color: 'red',
     },

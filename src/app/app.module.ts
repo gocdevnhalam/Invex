@@ -32,6 +32,7 @@ import { SharedModuleApp } from './shared/shared.module';
 import { PaperComponent } from './home/paper/paper.component';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { FormsModule } from '@angular/forms';
     ChartModule,
     TableModule,
     CalendarModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

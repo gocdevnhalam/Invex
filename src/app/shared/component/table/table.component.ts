@@ -18,7 +18,6 @@ export class TableComponent {
       (data: any) => {
         if (data.status == ConstantDef.STATUS_SUCCES) {
           this.products = this.convertImg(data.response);
-          console.log(this.products);
         }
       },
       (error: any) => {

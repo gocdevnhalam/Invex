@@ -10,6 +10,7 @@ export class Service {
   loginUrl = environment.apiUrl + 'login/';
   private readonly getProductURL = environment.apiCommon + '/products/get/';
   private readonly getAllOrderItemURL = environment.apiCommon + '/order/get/';
+  private readonly getRevenueURL = environment.apiCommon + '/revenue/get/';
   constructor(private _http: HttpClient) {}
   login(data: any) {
     return this._http.post(this.loginUrl, {
@@ -29,5 +30,11 @@ export class Service {
     let params = new HttpParams();
     params = params.append('limit', data.limit);
     return this._http.get<any>(this.getAllOrderItemURL, { params });
+  }
+  getRevenue(param: any): Observable<any> {
+    let params = new HttpParams();
+    params = params.set('dataType', param.dataType);
+    params = params.set('timeType', param.timeType);
+    return this._http.get<any>(this.getRevenueURL, { params });
   }
 }
